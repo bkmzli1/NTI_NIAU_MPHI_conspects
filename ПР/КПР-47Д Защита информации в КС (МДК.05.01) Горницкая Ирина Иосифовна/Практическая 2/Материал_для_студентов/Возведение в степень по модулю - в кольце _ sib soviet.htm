@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#"><head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="http://sib.ktu10.com/sites/sib.ktu10.com/files/sib_logo2_2.png" type="image/png">
+<link rel="shortlink" href="file:///node/5563">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ['tex2jax.js'],
+  jax: ['input/TeX','output/HTML-CSS'],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  }
+});
+</script><meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="file:///node/5563">
+  <title>Возведение в степень по модулю - в кольце | sib soviet</title>
+  <style type="text/css" media="all">
+@import url("http://sib.ktu10.com/modules/system/system.base.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/system/system.menus.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/system/system.messages.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/system/system.theme.css?md4qp4");
+</style>
+<style type="text/css" media="all">
+@import url("http://sib.ktu10.com/sites/all/modules/contributed_by_other/comment_notify/comment_notify.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/comment/comment.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/field/theme/field.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/node/node.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/search/search.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/user/user.css?md4qp4");
+@import url("http://sib.ktu10.com/sites/all/modules/contributed_by_other/extlink/extlink.css?md4qp4");
+@import url("http://sib.ktu10.com/modules/forum/forum.css?md4qp4");
+</style>
+<style type="text/css" media="all">
+@import url("http://sib.ktu10.com/themes/bartik/css/layout.css?md4qp4");
+@import url("http://sib.ktu10.com/themes/bartik/css/style.css?md4qp4");
+@import url("http://sib.ktu10.com/sites/sib.ktu10.com/files/color/bartik-d347af75/colors.css?md4qp4");
+</style>
+<style type="text/css" media="print">
+@import url("http://sib.ktu10.com/themes/bartik/css/print.css?md4qp4");
+</style>
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://sib.ktu10.com/themes/bartik/css/ie.css?md4qp4" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://sib.ktu10.com/themes/bartik/css/ie6.css?md4qp4" media="all" />
+<![endif]-->
+  <script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/jquery.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/jquery_002.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/drupal.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/comment_notify.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/shCore.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/shBrushPhp.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/shBrushPython.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/mathjax.js"></script>
+<script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/MathJax.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bartik","theme_token":"Ir3lWmFa-cqgyc_s5AMTOcUiia9p9h_-lx-ZTxIdROY","js":{"sites\/all\/modules\/contributed_by_other\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contributed_by_other\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/contributed_by_other\/syntaxhighlighter\/syntaxhighlighter_3.0.83\/scripts\/shCore.js":1,"sites\/all\/modules\/contributed_by_other\/syntaxhighlighter\/syntaxhighlighter_3.0.83\/scripts\/shBrushPhp.js":1,"sites\/all\/modules\/contributed_by_other\/syntaxhighlighter\/syntaxhighlighter_3.0.83\/scripts\/shBrushPython.js":1,"sites\/all\/modules\/contributed_by_other\/mathjax\/mathjax.js":1,"https:\/\/cdn.mathjax.org\/mathjax\/latest\/MathJax.js?config=TeX-AMS-MML_HTMLorMML":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contributed_by_other\/comment_notify\/comment_notify.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contributed_by_other\/extlink\/extlink.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contributed_by_other\/syntaxhighlighter\/syntaxhighlighter_3.0.83\/styles\/shCore.css":1,"sites\/all\/modules\/contributed_by_other\/syntaxhighlighter\/syntaxhighlighter_3.0.83\/styles\/shThemeDefault.css":1,"themes\/bartik\/css\/layout.css":1,"themes\/bartik\/css\/style.css":1,"themes\/bartik\/css\/colors.css":1,"themes\/bartik\/css\/print.css":1,"themes\/bartik\/css\/ie.css":1,"themes\/bartik\/css\/ie6.css":1}}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-5563 node-type-forum">
+  <div id="skip-link">
+    
+  </div>
+    <div id="page-wrapper"><div id="page">
+
+  <div id="header" class="without-secondary-menu"><div class="section clearfix">
+
+          <a href="file:///" title="Home" rel="home" id="logo">
+        
+      </a>
+    
+           
+    
+    
+           
+    
+    
+  </div></div> <!-- /.section, /#header -->
+
+  
+  
+  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
+
+          
+    
+           <!-- /.section, /#sidebar-first -->
+    
+    <div id="content" class="column"><div class="section">
+            <a id="main-content"></a>
+                    <h1 class="title" id="page-title">
+          Возведение в степень по модулю - в кольце        </h1>
+                          <div class="tabs">
+                  </div>
+                          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-5563" class="node node-forum node-promoted node-full clearfix" about="/node/5563" typeof="sioc:Post sioct:BoardPost">
+
+      <span property="dc:title" content="Возведение в степень по модулю - в кольце" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="4" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+      <div class="meta submitted">
+        <div class="user-picture">
+      </div>
+          </div>
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Модульная
+ алгебра - это довольно важный раздел, касательно информационной 
+безопасность, а именно криптографии. И не смотря что курс теории чисел и
+ модульной арифметики на кафедре СИБ довольно хорош, многие не всегда 
+могут вспомнить некоторые нюансы, которые в будущем могут облегчить 
+жизнь. Более того, я увидел что в ВГУ также "увлекаются" криптографией, и
+ <strong>RSA</strong>  и так как при реализации нужно возводить число в 
+очень большую степень а потом находить остаток от деления на другое 
+(модуль) из-за чего приходится использовать либо слишком малые блоки 
+либо работать с большими числами .<br><ins>В реальности, же, многие 
+устройства реализуют ассиметричные блочные алгоритмы шифрования, и при 
+этом они работают с полноценными блоками и часто не используют большие 
+числа <em>(не всегда это возможно)</em>.</ins></p>
+<p><strong>О том как возвести число в очень большую степень в модульной арифметике и при этом не повесив комп, я сегодня расскажу.</strong></p>
+<p><em><strong>Итак, сначала математика.</strong> Потом будет алгоритм и код на python.</em><br>
+Мы будем работать в кольце - эта такая особая алгебраическая структура. 
+Это знать не обязательно, главное пользоваться особым свойством, но 
+прежде поговорим об обозначениях: стандартно пишут так: $7^4 \pmod{13}$ -
+ это значит 7 в степени 4 по модулю 13, тоесть 7 возвести в 4 и найти 
+остаток от деления на 13 <em>(грубо говоря, тут математики могут меня поругать)</em>.
+ А выражение $7^4 \equiv 9 \pmod{13}$ -это значит, что 7 в 4-й степени 
+эквивалентно 9 по модулю 13, по сути если возвести 7 в 4-ю степень и 
+найдя остаток деления на 13 то мы получим 9, но можем туда записать 
+любое число которое нахождении остатка также даст 9, скажем  $7^4 \equiv
+ 100 \pmod{13}$ тоже верно - как видим образуется целый класс 
+эквивалентных чисел - это и будем использовать (<em>это использует RSA</em>).<br>
+Для более краткого обозначения:<br>
+$7^4 \pmod{13}$ будем обозначать, используя стиль неописанного тут 
+алгебраического понятия "кольца" вот так: $[7]^4_{13}$, и позволим себе 
+наглую вольность, вместо $\equiv$ будем использовать $=$.</p>
+<p>Рассмотрим предлагаемый алгоритм сначала на примере, потом в общем 
+виде. Пусть нам необходимо возвести число 7 в степень..... эм..... 45 по
+ модулю 5. Тогда делаем так:<br>
+$$<br>
+[7]^{45}_{5} = [7]_{5} * [7]^{44}_{5} = [7]_{5} * [49]^{22}_{5} = [7]_{5} * [4]^{22}_{5}<br>
+$$<br>
+Посмотрев на формулу выше, можно уже угадать алгоритм)))) Что мы тут 
+сделали, а вот как раз воспользовались мельком оговоренном мною 
+свойством. Давайте по шагам:</p>
+<ul><li>Сначала мы вынесли множитель чтобы получить чётную степень - это можно, мы в "кольце"</li>
+<li>Потом понизили степень, возведя число в квадрат (обычно для этого не нужны <em>большие числа</em>)</li>
+<li>Далее, просто вспомнили, что по-модулю у нас есть большое количество
+ эквивалентных чисел, ну и просто нашли от получившегося числа - 49 
+остаток от деления на 5 - это 4 <em>(ведь они эквивалентны в кольце)</em>, и с ним дальше работаем <em>(таким образом мы не вылезаем за квадрат модуля, в нашем случае 5)</em></li>
+</ul><p>Далее, просто делаем всё по кругу:<br>
+$$<br>
+[7]_{5} * [4]^{22}_{5} = [7]_{5} * [16]^{11}_{5} = [7]_{5} * [1]^{11}_{5} = [7]_{5} * [1]_{5} = [7]_{5} = [2]_{5}<br>
+$$</p>
+<p>К сожалению пример не очень удачный, но короткий <em>(быстро закончился, 1 в 11-й степени это 1)</em>, а так, в конце у нас может появиться к примеру такой вот список:<br>
+$$<br>
+[7]_{5} * [4]_{5} * [3]_{5} * [2]_{5} * [1]_{5} * [2]_{5}<br>
+$$<br>
+В этом случае их попарно перемножаем и каждый раз после умножения находим остаток, к примеру:<br>
+$[7]_{5} * [4]_{5} = [3]_{5} $</p>
+<p><strong>Теперь более-менее общее описание алгоритма:</strong></p>
+<ul><li>Сразу сокращаем исходное выражение, пример: $[7]_{5} = [2]_{5}$</li>
+<li>Добиваемся чётной степени путём выноса множителя и добавления его в 
+список (при добавлении в список на любителя, можно копить элементы и 
+потом их попарно умножать, либо оптимизировать и при добавлении элемента
+ смотреть, если там уже один есть, то мы просто перемножаем добавляемый с
+ уже имеющимся и записываем остаток при делении на модуль - таким 
+образом "список" никогда не вырастет больше одного элемента и по-сути не
+ станет "списком")</li>
+<li>Повторяем предыдущий пункт нужное кол-во раз</li>
+<li>Перемножаем между собой элементы списка (эффективно, тоесть 
+используя свойства применяемые выше), и оставшейся элемент в списке 
+перемножаем с полученным элементом операцией "понижения степени" и 
+получаем результат (не забываем что он должен быть тоже поделён на 
+модуль и ответ - остаток - хотя это не обязательно - так как это 
+эквивалентные числа)</li>
+</ul><p><strong>Вот и всё, пора показать пример на python <em>(кому было непонятно описание выше - поможет код)</em></strong>:</p>
+<pre class="brush:python">def Zpow(a, p, m):
+    """
+    Функция возведения в степень по модулю
+    принимает 3 аргумента
+    a - сам математический аргумент, возводимое число
+    p - степень
+    m - модуль
+    """
+    result = 1
+    while p &gt; 2: # когда степень сократится до квадрата и меньше - завершаем
+        if p % 2 == 0: # если степень кратна 2
+            a = (a ** 2) % m
+            p = p // 2 # целочисленное деление (на всякий)
+        else:
+            result = (result * a) % m
+            p = p - 1
+    a = (a ** p) % m
+    result = (result * a) % m
+    return result
+</pre><p>
+Можете поиграть с этой функцией - она очень быстро считает, и так как в <em>Питоне по умолчанию все числа Большие</em>, то попробуйте вбивать самые большие числа в аргументы этой функции, какие взбредут вам в голову!!!<br>
+В <a href="http://sib.ktu10.com/node/5557">Криптоусиках</a>, также реализована эта функция - и я всячески старался повесить сервак - не получилось.</p>
+<p>Зная сколько студентов на лабах по-программированию сломали голову с 
+этой процедурой возведения в степень по-модулю, я думаю этот материал 
+будет полезен.</p>
+</div></div></div>  </div>
+
+      
+  
+  
+
+</div>
+  </div>
+</div>
+  </div>
+      
+    </div></div> <!-- /.section, /#content -->
+
+    
+  </div></div> <!-- /#main, /#main-wrapper -->
+
+  
+  <div id="footer-wrapper"><div class="section">
+
+    
+          <div id="footer" class="clearfix">
+          <div class="region region-footer">
+    <div id="block-system-powered-by" class="block block-system">
+
+    
+  
+  
+</div>
+<div id="block-block-1" class="block block-block">
+
+    
+  <div class="content">
+    <!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter13137118 = new Ya.Metrika({id:13137118, enableAll: true});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/13137118" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->  </div>
+</div>
+  </div>
+      </div> <!-- /#footer -->
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+  <script type="text/javascript" src="%D0%92%D0%BE%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%81%D1%82%D0%B5%D0%BF%D0%B5%D0%BD%D1%8C%20%D0%BF%D0%BE%20%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8E%20-%20%D0%B2%20%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%B5%20_%20sib%20soviet_files/syntaxhighlighter.js"></script>
+
+
+</body></html>
