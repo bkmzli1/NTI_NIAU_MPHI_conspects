@@ -1,39 +1,63 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+
     <meta charset="utf-8">
 </head>
 <body>
-<p id="d"></p>
-<p id="x"></p>
+<div>
+
+
+    <p>a = <input type="number" id="a">
+        b = <input type="number" id="b">
+        c = <input type="number" id="c">
+    </p>
+
+
+    <button id="submit">Submit</button>
+    <p id="d"></p>
+    <p id="x"></p>
+</div>
 <script>
 
-    let a = +prompt("Введите A:"),/*Ввод переменной*/
-        b = +prompt("Введите B:"),/*Ввод переменной*/
-        c = +prompt("Введите C:"),/*Ввод переменной*/
-        arr = kvur(a, b, c),/*корней квадратного уравнения*/
-        d = arr[0];/*дискриминант*/
-    document.getElementById("d").innerHTML = "Дискриминант: " + d; /*присвоение d  к <p id="d"></p> */
-    console.log("Дискриминант: " + d);/*вывод в консоль */
-    console.log(
-        d < 0
+    function abc() {
+        let a = document.getElementById("a").value,/*Ввод переменной*/
+            b = document.getElementById("b").value,/*Ввод переменной*/
+            c = document.getElementById("c").value,/*Ввод переменной*/
+            arr = kvur(a, b, c),/*корней квадратного уравнения*/
+            d = arr[0];/*дискриминант*/
+
+        console.log("a: " + a);/*вывод в консоль */
+        console.log("a: " + b);/*вывод в консоль */
+        console.log("a: " + c);/*вывод в консоль */
+        document.getElementById("d").innerHTML = "Дискриминант: " + d; /*присвоение d  к <p id="d"></p> */
+        console.log("Дискриминант: " + d);/*вывод в консоль */
+        console.log(
+            d < 0
+                ? "Корней нет"
+                : d === 0
+                ? "Один корень: " + arr[1].toFixed(2)
+                : `Два корня: ${arr[1].toFixed(2)} и ${arr[2].toFixed(2)}`
+        );/*вывод в консоль */
+
+        document.getElementById("x").innerHTML = d < 0
             ? "Корней нет"
             : d === 0
-            ? "Один корень: " + arr[1]
-            : `Два корня: ${arr[1]} и ${arr[2]}`
-    );/*вывод в консоль */
-    document.getElementById("x").innerHTML = d < 0
-        ? "Корней нет"
-        : d === 0
-            ? "Один корень: " + arr[1]
-            : `Два корня: ${arr[1]} и ${arr[2]}`;
+                ? "Один корень: " + arr[1].toFixed(2)
+                : `Два корня: ${arr[1].toFixed(2)} и ${arr[2].toFixed(2)}`
+        ;
+        if (a === '0' & b === '0' & c === '0') {
+            document.getElementById("x").innerHTML = `Один корень: 0`
+        }
+    }
+
     /*вывод в <p id="x"></p> */
 
 
-/*  Вычисление корней квадратного уравнения.
-  Если корни есть, возвращает массив из дискриминанта и двух чисел-корней.
-  Если корней нет - возвращает массив из одного элемента - отрицательного дискриминанта
-  */
+    /*  Вычисление корней квадратного уравнения.
+      Если корни есть, возвращает массив из дискриминанта и двух чисел-корней.
+      Если корней нет - возвращает массив из одного элемента - отрицательного дискриминанта
+      */
     function kvur(a, b, c) {
         let discr = (a, b, c) => b * b - 4 * a * c;
         // Если значение дискриминанта квадратного уравнения < 0, то  корней на множестве действительных чисел нет.
@@ -42,9 +66,12 @@
 
         let x1 = (-b + Math.sqrt(d)) / (2 * a),
             x2 = (-b - Math.sqrt(d)) / (2 * a);
-
         return [d, x1, x2];
     }
+
+    document.getElementById("submit").addEventListener("click", () => {
+        abc()
+    })
 </script>
 </body>
 </html>
