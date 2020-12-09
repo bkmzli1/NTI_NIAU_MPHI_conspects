@@ -1,0 +1,454 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Тема 2.10 </title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#1-понятие-вредоносного-по">1 Понятие вредоносного по</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#2-виды-вредоносного-по">2 Виды вредоносного ПО</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n6"><a class="md-toc-inner" href="#21-разновидности-вирусов">2.1 Разновидности вирусов</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n8"><a class="md-toc-inner" href="#22-вирусы">2.2 Вирусы</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n10"><a class="md-toc-inner" href="#23-черви">2.3 Черви</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n12"><a class="md-toc-inner" href="#24--трояны">2.4  Трояны</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n14"><a class="md-toc-inner" href="#25--бэкдоры">2.5  Бэкдоры</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n16"><a class="md-toc-inner" href="#26--руткиты">2.6  Руткиты</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n22"><a class="md-toc-inner" href="#27-боты">2.7 Боты</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n24"><a class="md-toc-inner" href="#28--шпионы">2.8  Шпионы</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n26"><a class="md-toc-inner" href="#29--классификация-по-степени-опасности">2.9  Классификация по степени опасности</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n28"><a class="md-toc-inner" href="#210-рекламный-вирус">2.10 Рекламный вирус</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n37"><a class="md-toc-inner" href="#3-деструктивные-функции-вредоносного-по">3 Деструктивные функции вредоносного ПО</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n45"><a class="md-toc-inner" href="#31-обход-банковской-системы-двухфакторной-аутентификации32-пример-веб-инжекта-для-вконтакте">3.1 Обход банковской системы двухфакторной аутентификации3.2 Пример веб-инжекта для вконтакте</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n55"><a class="md-toc-inner" href="#32-методы">3.2 Методы</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n67"><a class="md-toc-inner" href="#321-методы-проникновения">3.2.1 Методы проникновения</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n77"><a class="md-toc-inner" href="#322-методы-заражения-стандартные-методы-заражения-kasp">3.2.2 Методы заражения (Стандартные методы заражения (Kasp))</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n88"><a class="md-toc-inner" href="#33-процесс-заражения">3.3 Процесс заражения</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n95"><a class="md-toc-inner" href="#34-признаки-заражения">3.4 Признаки заражения</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n120"><a class="md-toc-inner" href="#35-защита-от-заражения">3.5 Защита от заражения</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n97"><a class="md-toc-inner" href="#4-мифы-и-факты">4 Мифы и факты</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n167"><a class="md-toc-inner" href="#5-заключение">5 Заключение</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n171"><a class="md-toc-inner" href="#6-полезные-ссылки">6 Полезные ссылки</a></span></p></div><h1><a name="1-понятие-вредоносного-по" class="md-header-anchor"></a><span>1 Понятие вредоносного по</span></h1><p><span>Вредоносного по – это любое программное обеспечение, предназначенное для получения несанкционированного доступа к вычислительным ресурсам самой ЭВМ или к информации, хранимой на ЭВМ, с целью несанкционированного использования ресурсов ЭВМ или причинения вреда (нанесения ущерба) владельцу информации, и/или владельцу ЭВМ, и/или владельцу сети ЭВМ, путём копирования, искажения, удаления или подмены информации. Многие[какие?] антивирусы считают крэки (кряки), кейгены и прочие программы для взлома приложений вредоносными программами, или потенциально опасными.</span></p><h1><a name="2-виды-вредоносного-по" class="md-header-anchor"></a><span>2 Виды вредоносного ПО</span></h1><p><span>Поскольку киберпреступники придумывают все более сложные способы проникновения в системы пользователей, рынок вредоносных программ существенно расширился и делятся на несколько видов </span></p><h2><a name="21-разновидности-вирусов" class="md-header-anchor"></a><span>2.1 Разновидности вирусов</span></h2><p><span>Существует большое количество различных компьютерных вирусов. Одни из них могут просто заставлять двигаться курсор мыши, другие могут украсть ваши личные данные и даже повредить работу всей операционной системы. Давайте рассмотрим основные виды компьютерных вирусов.</span></p><h2><a name="22-вирусы" class="md-header-anchor"></a><span>2.2 Вирусы</span></h2><p><span>Компьютерные вирусы получили свое название за способность «заражать» множество файлов на компьютере. Они распространяются и на другие машины, когда зараженные файлы отправляются по электронной почте или переносятся пользователями на физических носителях, например, на USB-накопителях или (раньше) на дискетах. По данным Национального института стандартов и технологий (NIST) , первый компьютерный вирус под названием «Brain» был написан в 1986 году двумя братьями с целью наказать пиратов, ворующих ПО у компании. Вирус заражал загрузочный сектор дискет и передавался на другие компьютеры через скопированные зараженные</span></p><h2><a name="23-черви" class="md-header-anchor"></a><span>2.3 Черви</span></h2><p><span>В отличие от вирусов, червям для распространения не требуются вмешательства человека: они заражают один компьютер, а затем через компьютерные сети распространяются на другие машины без участия их владельцев. Используя уязвимости сети, например, недостатки в почтовых программах, черви могут отправлять тысячи своих копий и заражать все новые системы, и затем процесс начинается снова. Помимо того, что многие черви просто «съедают» системные ресурсы, снижая тем самым производительность компьютера, большинство из них теперь содержит вредоносные «составляющие», предназначенные для кражи или удаления файлов.</span></p><h2><a name="24--трояны" class="md-header-anchor"></a><span>2.4  Трояны</span></h2><p><span>Более известные как троянцы, эти программы маскируются под легитимные файлы или ПО. После скачивания и установки они вносят изменения в систему и осуществляют вредоносную деятельность без ведома или согласия жертвы.</span></p><h2><a name="25--бэкдоры" class="md-header-anchor"></a><span>2.5  Бэкдоры</span></h2><p><span>Дефект алгоритма, который намеренно встраивается в него разработчиком и позволяет получить несанкционированный доступ к данным или удаленному управлению операционной системой и компьютером в целом</span></p><h2><a name="26--руткиты" class="md-header-anchor"></a><span>2.6  Руткиты</span></h2><p><span>Руткиты — это набор программных средств (например, исполняемых файлов, скриптов, конфигурационных файлов), обеспечивающих:</span></p><p><span>¾  маскировку объектов (процессов, файлов, каталогов, драйверов);</span></p><p><span>¾  управление (событиями, происходящими в системе);</span></p><p><span>¾  сбор данных (параметров системы).</span></p><p><span>Термин Rootkit исторически пришёл из мира UNIX, и под этим термином понимается набор утилит или специальный модуль ядра, которые злоумышленник устанавливает на взломанной им компьютерной системе сразу после получения прав суперпользователя. Этот набор, как правило, включает в себя разнообразные утилиты для «заметания следов» вторжения в систему, делает незаметными снифферы, сканеры, кейлоггеры, троянские программы, замещающие основные утилиты UNIX (в случае не ядерного руткита). Rootkit позволяет взломщику закрепиться во взломанной системе и скрыть следы своей деятельности путём скрытия файлов, процессов, а также самого присутствия руткита в системе.</span></p><h2><a name="27-боты" class="md-header-anchor"></a><span>2.7 Боты</span></h2><p><span>Вредоносные программы, наделенные способностью объединяться в ботнеты</span></p><h2><a name="28--шпионы" class="md-header-anchor"></a><span>2.8  Шпионы</span></h2><p><span>Вредоносное ПО, способное следить за пользователем и передавать злоумышленникам информацию, получаемую с его зараженного устройства</span></p><h2><a name="29--классификация-по-степени-опасности" class="md-header-anchor"></a><span>2.9  Классификация по степени опасности</span></h2><p><span> </span></p><h2><a name="210-рекламный-вирус" class="md-header-anchor"></a><span>2.10 Рекламный вирус</span></h2><p><span>Одним из наиболее распространенных типов вредоносных программ является рекламное ПО. Программы автоматически доставляют рекламные объявления на хост-компьютеры. Среди разновидностей Adware - всплывающие рекламные объявления на веб-страницах и реклама, входящая в состав «бесплатного» ПО. Некоторые рекламные программы относительно безвредны, в других используются инструменты отслеживания для сбора информации о вашем местонахождении или истории посещения сайтов и вывода целевых объявлений на экран вашего компьютера. BetaNews сообщил об обнаружении нового типа рекламного ПО, который может отключить антивирусную защиту. Поскольку Adware устанавливается с согласия пользователя, такие программы нельзя назвать вредоносными: обычно они идентифицируются как «потенциально нежелательные программы»</span></p><h1><a name="3-деструктивные-функции-вредоносного-по" class="md-header-anchor"></a><span>3 Деструктивные функции вредоносного ПО</span></h1><p><span>Троянские программы-блокировщики - отключают функции легитимного</span></p><p><span>ПО и выводят на экран сообщение с предложением о выкупе</span></p><p><span>• Шифровальщики - зашифровывают хранящиеся на компьютере файлы, после чего требуют у жертвы выкуп за их расшифровку. В случае отказа, могут удалить все данные либо оставить их в зашифрованном виде</span></p><p><span>• Банковские троянские программы - предназначены для кражи денег со счетов жертвы с помощью целого ряда хитроумных действий (создание удаленного доступа, изменение файлов Windows, деактивация антивирусов и так далее)</span></p><p><span>• Веб-инжекты - технология встраивания в просматриваемую пользователем веб-страницу постороннего содержимого</span></p><p><span>• Загрузчики - устанавливают на зараженное устройство другие вредоносные программы</span></p><p><span>• Майнеры - “добывают” криптовалюту на зараженном устройстве</span></p><h2><a name="31-обход-банковской-системы-двухфакторной-аутентификации32-пример-веб-инжекта-для-вконтакте" class="md-header-anchor"></a><span>3.1 Обход банковской системы двухфакторной аутентификации3.2 Пример веб-инжекта для вконтакте</span></h2><ol start='' ><li><span>В момент захода в систему “банкклиент” веб-инжект требует ввести во внедренное на веб-страницу банка окно номер мобильного телефона для продолжения работы</span></li><li><span>На мобильный телефон приходит СМС со ссылкой на установку банковского троянца на Android </span></li><li><span>Клиент вводит свои учетные данные в форму на странице банка, вся информация передается злоумышленникам</span></li><li><span>Мобильный троянец перехватывает СМС с одноразовым паролем от банка и пересылает его злоумышленникам</span></li></ol><h2><a name="32-методы" class="md-header-anchor"></a><span>3.2 Методы</span></h2><ul><li><span>Сменные носители информации</span></li><li><span>Вредоносные почтовые рассылки</span></li><li><span>Уязвимости ПО</span></li><li><span>Социальная инженерия, фишинг</span></li><li><span>MitM атаки</span></li></ul><h3><a name="321-методы-проникновения" class="md-header-anchor"></a><span>3.2.1 Методы проникновения</span></h3><ul><li><span>Дроппер - модуль, осуществляющий извлечение содержащихся в нем модулей вируса, их распаковку и установку</span></li><li><span>Инфектор - модуль, осуществляющий заражение файловых объектов путем изменения их внутренней структуры</span></li><li><span>Инжектор - модуль, реализующий встраивание вредоносных компонент в процесс другого приложения</span></li><li><span>Лоадер - модуль, осуществляющий загрузку других модулей</span></li></ul><h3><a name="322-методы-заражения-стандартные-методы-заражения-kasp" class="md-header-anchor"></a><span>3.2.2 Методы заражения (Стандартные методы заражения (Kasp))</span></h3><ul><li><span>Дроппер - модуль, осуществляющий извлечение содержащихся в нем модулей вируса, их распаковку и установку</span></li><li><span>Инфектор - модуль, осуществляющий заражение файловых объектов путем изменения их внутренней структуры</span></li><li><span>Инжектор - модуль, реализующий встраивание вредоносных компонент в процесс другого приложения</span></li><li><span>Лоадер - модуль, осуществляющий загрузку других модулей</span></li></ul><p><span> </span></p><h2><a name="33-процесс-заражения" class="md-header-anchor"></a><span>3.3 Процесс заражения</span></h2><p><img src="file:///C:/Users/Bkmz/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg" referrerpolicy="no-referrer" alt="img"></p><p><span>Итак, как же происходит заражение компьютерными вирусами или вредоносными программами? Существует несколько стандартных способов. Это ссылки на вредоносные сайты в электронной почте или сообщениях в социальных сетях, посещение зараженного сайта (известного как drive-by загрузка) и использование зараженного USB-накопителя на вашем компьютере. Уязвимости операционной системы и приложений позволяют злоумышленникам устанавливать вредоносное ПО на компьютеры. Поэтому для снижения риска заражения очень важно устанавливать обновления для систем безопасности, как только они становятся доступными.</span></p><p><span> </span></p><p><span>Киберпреступники часто используют методы социальной инженерии, чтобы обманом заставить вас делать что-то, что угрожает вашей безопасности или безопасности вашей компании. Фишинговые сообщения являются одним из наиболее распространенных методов. Вы получаете на вид абсолютно легитимное электронное сообщение, в котором вас убеждают загрузить зараженный файл или посетить вредоносный веб-сайт. Цель хакеров - написать сообщение так, чтобы вы нашли его убедительным. Это может быть, например, предупреждение о возможном вирусном заражении или уведомление из вашего банка или сообщение от старого друга.</span></p><p><span> </span></p><p><span>Конфиденциальные данные, такие как пароли, являются главной целью киберпреступников. Помимо использования вредоносных программ для перехвата паролей в момент их ввода, злоумышленники также могут собирать пароли с веб-сайтов и других компьютеров, которые они взломали. Вот почему так важно использовать уникальный и сложный пароль для каждой учетной записи. Он должен состоять из 15 и более символов, включающих буквы, цифры и специальные символы. Таким образом, если киберпреступникам удастся взломать один аккаунт, они не получат доступ ко всем вашим учетным записям. К сожалению, большинство пользователей имеют очень слабые пароли: вместо того, чтобы придумать труднодоступную комбинацию, они обращаются к standby-паролям типа «123456» или «Password123», которые преступники легко подбирают. Даже контрольные вопросы не всегда могут служить эффективной защитой, потому что многие люди дают один и тот же ответ на вопрос «Ваше любимая еда?», например, если вы находитесь в Соединенных Штатах, то почти наверняка ответ будет - «Пицца».</span></p><h2><a name="34-признаки-заражения" class="md-header-anchor"></a><span>3.4 Признаки заражения</span></h2><p><span>Хотя большинство вредоносных программ не оставляет никаких явных следов, и ваш компьютер работает нормально, иногда все же можно заметить признаки возможного заражения. Самый первый из них - снижение производительности, т.е. процессы происходят медленные, загрузка окон занимает больше времени, в фоновом режиме работают какие-то случайные программы. Еще одним настораживающим признаком может считаться измененных домашних интернет-страниц в вашем браузере или более частое, чем обычно, появление всплывающих объявлений. В некоторых случаях вредоносное ПО даже может влиять на базовые функции компьютера: не открывается Windows, нет подключения к Интернету или доступа к более высокоуровневым функциям управления системой более высокого уровня. Если вы подозреваете, что ваш компьютер может быть заражен, немедленно произведите проверку системы. Если заражение не обнаружено, но вы все еще сомневаетесь, получите второе мнение - запустите альтернативный антивирусный сканер.</span></p><p>&nbsp;</p><h2><a name="35-защита-от-заражения" class="md-header-anchor"></a><span>3.5 Защита от заражения</span></h2><p><strong><span>Используйте антивредоносное приложение</span></strong><span> — Установите антивредоносное приложение и регулярно обновляйте его. Это позволит защитить ваш компьютер от вирусов и других вредоносных программ. Антивредоносные приложения выполняют поиск вирусов, шпионского и другого </span><strong><span>вредоносного</span></strong><span> программного обеспечения, пытающегося проникнуть в вашу электронную почту, операционную систему или файлы. Новые угрозы могут появляться ежедневно, поэтому необходимо регулярно проверять наличие обновлений на веб-сайте изготовителя антивредоносного приложения.</span></p><p><span>Одновременный запуск нескольких приложений для защиты от вредоносных программ может привести к замедлению или нестабильной работе вашей системы. При установке стороннего приложения для защиты от вредоносных программ Microsoft Defender автоматически отключается. При установке двух сторонних приложений для защиты от вредоносных программ, они могут одновременно начать работу. </span></p><ul><li><p><strong><span>Не открывайте сообщения электронной почты от незнакомых отправителей или незнакомые вложения</span></strong><span>. Многие вирусы передаются в виде вложений в электронные письма, и для их распространения достаточно открыть вложение. Настоятельно рекомендуем открывать только ожидаемые или известные вам вложения. Дополнительные сведения см. в следующем разделе: </span><a href='https://support.microsoft.com/ru-ru/windows/защита-от-фишинга-0c7ea947-ba98-3bd9-7184-430e1f860a44'><span>Защита от фишинга.</span></a></p></li><li><p><strong><span>Используйте блокирование всплывающих окон в веб-браузере</span></strong><span>. Всплывающие окна — это небольшие окна в браузере, отображающиеся поверх просматриваемой вами веб-страницы. Несмотря на то, что большинство таких окон используется для рекламных целей, в них может содержаться вредоносный или небезопасный код. Блокирование всплывающих окон позволяет избавиться от некоторых или даже всех всплывающих окон. Блокирование всплывающих окон в Microsoft Edge включено по умолчанию.</span></p></li><li><p><strong><span>При использовании Microsoft Edge, убедитесь, что SmartScreen включен</span></strong><span>. SmartScreen в Microsoft Edge помогает защитить от фишинга и атак вредоносных программ, предупреждая о возможной небезопасности веб-сайта или расположения загрузки. Дополнительные сведения см. в разделе </span><a href='https://support.microsoft.com/ru-ru/topic/что-такое-фильтр-smartscreen-и-как-он-меня-защищает-1c9a874a-6826-be5e-45b1-67fa445a74c8'><span>Что такое фильтр SmartScreen и как он меня защищает?</span></a></p></li><li><p><strong><span>Обратите внимание на уведомления Windows SmartScreen</span></strong><span>. С осторожностью запускайте неизвестные приложения, скачанные из Интернета. Такие приложения с большой вероятностью могут оказаться небезопасными. Когда вы загружаете и запускаете приложение из Интернета, SmartScreen использует сведения о его репутации, чтобы предупредить вас, если приложение малоизвестно и может быть вредоносным.</span></p></li><li><p><strong><span>Регулярно обновляйте Windows</span></strong><span>. Корпорация Майкрософт регулярно выпускает особые обновления для системы безопасности, предназначенные для защиты компьютера. Обновления могут предотвратить атаки вирусов и других вредоносных программ, закрывая возможные слабые места в системе безопасности.</span></p><p><span>Включите Центр обновления Windows, чтобы ОС Windows автоматически получала эти обновления.</span></p></li><li><p><strong><span>Используйте брандмауэр</span></strong><span>. Брандмауэр Windows или любое другое приложение брандмауэра может уведомлять вас о подозрительной активности, когда вирус или вирус-червь пытается подключиться к вашему компьютеру. Он также позволяет блокировать вирусы, червей и злоумышленников, отправляющих потенциально опасные приложения на компьютер.</span></p></li><li><p><strong><span>Используйте параметры конфиденциальности браузера</span></strong><span>. Некоторые веб-сайты могут пытаться использовать ваши личные данные для целевой рекламы, мошенничества и кражи личных сведений.</span></p><p><span>Дополнительные сведения о настройке параметров конфиденциальности в Microsoft Edge см. в разделе </span><a href='https://support.microsoft.com/ru-ru/microsoft-edge/настройка-параметров-конфиденциальности-согласно-вашим-потребностям-8c923c9d-4ef2-849d-a399-4de716ecbbaf'><span>Настройка параметров конфиденциальности согласно вашим потребностям.</span></a></p></li><li><p><strong><span>Убедитесь, что функция контроля учетных записей включена</span></strong><span>. При внесении на компьютере изменений, требующих прав администратора, функция контроля учетных записей уведомит вас об этом и предложит утвердить эти изменения. Контроль учетных записей не позволяет вирусам вносить нежелательные изменения. Чтобы открыть контроль учетных записей, проведите пальцем от правой границы экрана, а затем коснитесь элемента </span><strong><span>Поиск</span></strong><span>. (Если вы используете мышь, наведите указатель на правый верхний угол экрана, переместите указатель вниз, а затем щелкните </span><strong><span>Поиск</span></strong><span>.) Введите в поле поиска </span><strong><span>контроль учетных записей</span></strong><span>, а затем выберите элемент </span><strong><span>Изменение параметров контроля учетных записей</span></strong><span>.</span></p></li><li><p><strong><span>Очистите кэш Интернета и журнал браузера</span></strong><span> . Большинство браузеров сохраняют информацию о посещаемых веб-сайтах, а также информацию, которую вы предоставляете (например, ваше имя и адрес). Хотя хранение этих сведений на компьютере может быть полезно, существуют ситуации, когда эти сведения необходимо удалить частично или полностью, — например, если вы работаете на общедоступном компьютере и не хотите оставлять на нем свои личные сведения. Дополнительные сведения см. в статье </span><a href='https://support.microsoft.com/ru-ru/topic/просмотр-и-удаление-журнала-браузера-в-internet-explorer-098ffe52-5ac9-a449-c296-c735c32c8678'><span>Удаление журнала браузера</span></a><span>.</span></p></li></ul><p>&nbsp;</p><h1><a name="4-мифы-и-факты" class="md-header-anchor"></a><span>4 Мифы и факты</span></h1><p><span>Существует ряд распространенных мифов, связанных с компьютерными вирусами:</span></p><p><span> </span></p><ul><li><span>Любое сообщение об ошибке компьютера указывает на заражение вирусом. Это неверно: сообщения об ошибках также могут быть вызваны ошибками аппаратного или программного обеспечения.</span></li><li><span>Вирусам и червям всегда требуется взаимодействие с пользователем. Это не так. Для того чтобы вирус заразил компьютер, должен быть исполнен код, но это не требует участия пользователя. Например, сетевой червь может заражать компьютеры пользователей автоматически, если на них имеются определенные уязвимости.</span></li><li><span>Вложения к электронным письмам от известных отправителей являются безопасными. Это не так, потому что эти вложения могут быть заражены вирусом и использоваться для распространения заражения. Даже если вы знаете отправителя, не открывайте ничего, что в чем вы не уверены.</span></li><li><span>Антивирусные программы могут предотвратить заражение. Со своей стороны, поставщики антивирусного ПО делают все возможное, чтобы не отставать от разработчиков вредоносных программ, но пользователям обязательно следует установить на своем компьютере комплексное защитное решение класса Internet security, который включает в себя технологии, специально предназначенные для активного блокирования угроз. Даже при том, что 100-процентной защиты не существует. Нужно просто осознанно подходить к обеспечению собственной онлайн-безопасности, чтобы уменьшить риск подвергнуться атаке.</span></li><li><span>Вирусы могут нанести физический ущерб вашему компьютеру. Что если вредоносный код приведет к перегреву компьютера или уничтожит критически важные микрочипы? Поставщики защитных решений неоднократно развенчивали этот миф - такие повреждения просто невозможны.</span></li></ul><p><span>Между тем, рост количества устройств взаимодействующих друг с другом в Интернете Вещей (IoT), открывает дополнительные интересные возможности: что если зараженный автомобиль съедет с дороги, или зараженная «умная» печь продолжит нагреваться, пока не случится превышение нормальной нагрузки? Вредоносного ПО будущего может сделать такой физический ущерб реальностью.</span></p><p><span> </span></p><p><span>У пользователей есть ряд неправильных представлений о вредоносных программах: например, многие считают, что признаки заражения всегда заметны и поэтому они смогут определить, что их компьютер заражен. Однако, как правило, вредоносное ПО не оставляет следов, и ваша система не будет показывать каких-либо признаков заражения.</span></p><p><span> </span></p><p><span>Tweet: Как правило, вредоносное ПО не оставляет следов, и ваша система не будет показывать каких-либо признаков заражения. Твитни это!</span></p><p><span> </span></p><p><span>Так же не стоит верить, что все сайты с хорошей репутацией безопасны. Они также могут быть взломаны киберпреступниками. А посещение зараженного вредоносным кодом легитимного сайта – еще большая вероятность для пользователя расстаться со своей личной информацией. Именно это, как пишет SecurityWeek, произошло с Всемирным банком. Также многие пользователи считают, что их личные данные - фотографии, документы и файлы - не представляют интереса для создателей вредоносных программ. Киберпреступники же используют общедоступные данные для того, чтобы атаковать отдельных пользователей, или собрать информацию, которая поможет им создать фишинговые письма, чтобы проникнуть во внутренние сети организаций.</span></p><h1><a name="5-заключение" class="md-header-anchor"></a><span>5 Заключение</span></h1><p><span>Вирусы это программы которые могут проникнуть на компьютер простого пользователя только при  некорректных действия пользователя посещение сайтов паразитов или через почту. Для защиты нужно использовать антивирус.</span></p><h1><a name="6-полезные-ссылки" class="md-header-anchor"></a><span>6 Полезные ссылки</span></h1><p><a href='https://youtu.be/jscrm8Mk9Zc' target='_blank' class='url'>https://youtu.be/jscrm8Mk9Zc</a><span> -Как защитить ПК от вирусов</span></p><p><a href='https://youtu.be/LT9Mvmj_cL0' target='_blank' class='url'>https://youtu.be/LT9Mvmj_cL0</a><span> - Как защитить компьютер от вирусов</span></p><p><a href='https://youtu.be/Tnz2ZqtNdOA' target='_blank' class='url'>https://youtu.be/Tnz2ZqtNdOA</a><span> - Компьютерные вирусы и антивирусные программы.</span></p><p><a href='https://www.lessons-tva.info/edu/e-inf1/e-inf1-4-1-3.html' target='_blank' class='url'>https://www.lessons-tva.info/edu/e-inf1/e-inf1-4-1-3.html</a><span> - Сервисное программное обеспечение ПК и основы алгоритмизации</span></p><p><a href='https://studopedia.ru/18_61807_osnovnie-metodi-zashchiti-ot-kompyuternih-virusov.html' target='_blank' class='url'>https://studopedia.ru/18_61807_osnovnie-metodi-zashchiti-ot-kompyuternih-virusov.html</a><span> - Основные методы защиты от компьютерных вирусов</span></p><p><a href='https://support.microsoft.com/ru-ru/windows' target='_blank' class='url'>https://support.microsoft.com/ru-ru/windows</a><span> - Защита компьютера от вирусов</span></p></div>
+</body>
+</html>

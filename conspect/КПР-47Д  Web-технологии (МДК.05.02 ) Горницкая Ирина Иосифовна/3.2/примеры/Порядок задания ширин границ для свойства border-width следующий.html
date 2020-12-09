@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0//EN">
+
+<HTML>
+
+<HEAD>
+
+    <TITLE>
+
+
+
+        Порядок задания ширин границ для свойства border-width следующий: ширина верхней границы, ширина правой границы, ширина нижней границы, ширина левой границы. Все значения, как и в предыдущих случаях, разделяются пробелами. Пример использования (рис. 5.11).
+
+
+
+        Демонстрация рамок, толщина которых задана ключевыми словами thin medium и thick
+
+    </TITLE>
+
+    <STYLE type="text/css"> DIV { margin:20; padding:20;
+
+        text-align:center; border-style:solid; border-color:black; border-width:thin}
+
+    div.2 (border-width:medium} div.3 {border-width:thick}
+
+    </STYLE>
+
+</HEAD>
+
+<BODY bgcolor=white>
+
+<H3 align=center>
+
+    Демонстрация рамок, толщина которых задана ключевыми словами
+
+    </НЗ>
+
+    <DIV>
+
+        Границы этого блока имеют толщину thin
+
+    </DIV>
+
+    <DIV class="2">
+
+        Границы этого блока имеют толщину medium
+
+    </DIV>
+
+    <DIV class="3">
+
+        Границы этого блока имеют толщину thick
+
+    </DIV>
+
+</BODY>
+
+</HTML>
+
+![img](/clip_image008.jpg)
+
+Рис. 5.11. Вид рамок с различными значениями border-width в браузере Internet Explorer
+
+
+
+Вид, представленный на рис. 5.11, вышеприведенный документ будет иметь только в браузере Internet Explorer. Netscape Communicator 4.74 не поддерживает селектор классов, и поэтому в его окне все границы будут иметь толщину thin. Для того чтобы продемонстрировать другие две границы (medium и thin) в Netscape Communicator 4.74, надо немного изменить документ:
+
+<HTML>
+
+<HEAD>
+
+    <TITLE>
+
+        Демонстрация рамок, толщина которых задана ключевыми словами thin medium и thick
+
+    </TITLE>
+
+    <STYLE type="text/css"> DIV {margin:20; padding:20;
+
+        text-align:center; border-style:solid; border-color:black; border-width:thin}
+
+    </STYLE>
+
+</HEAD>
+
+<BODY bgcolor=white>
+
+<H3 align=center>
+
+    Демонстрация рамок, толщина которых задана ключевыми словами
+
+    </НЗ>
+
+    <DIV>
+
+        Границы этого блока имеют толщину thin
+
+    </DIV>
+
+    <DIV style="border-width:medium"> Границы этого блока имеют толщину medium
+
+    </DIV>
+
+    <DIV style="border-width:thick"> Границы этого блока имеют толщину thick
+
+    </DIV>
+
+</BODY>
+
+</HTML>
